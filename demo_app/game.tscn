@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://bd77bxyrl55gb"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_n67x7"]
+
+[node name="Control" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 21
+alignment = 1
+script = ExtResource("1_n67x7")
+metadata/_edit_lock_ = true
+
+[node name="Info" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(187.98, 73)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+text = "COPY TEXT"
+
+[node name="Copied" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "COPIED!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="."]
+custom_minimum_size = Vector2(187.98, 73)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
+text = "PASTE TEXT"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "RESULT: "
+fit_content = true
+
+[connection signal="pressed" from="Button" to="." method="copy_text"]
+[connection signal="pressed" from="Button2" to="." method="paste_text"]
