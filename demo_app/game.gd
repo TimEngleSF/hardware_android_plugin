@@ -37,7 +37,7 @@ func _ready() -> void:
 		"Memory: ", total_ram, "\n",
 		"Processor: ", OS.get_processor_name(), "\n",
 		"Storage: ", total_storage, "\n",
-		"Performance Mode :", performance_mode
+		"Performance Mode: ", performance_mode
 		)
 
 
